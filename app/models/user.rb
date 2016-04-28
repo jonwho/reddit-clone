@@ -8,4 +8,12 @@ class User < ActiveRecord::Base
   # hard delete maybe after 30 days?
   has_many :posts
   has_many :comments
+
+  def post_votes
+    posts.votes
+  end
+
+  def comment_votes
+    comments.votes
+  end
 end
