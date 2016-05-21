@@ -1,17 +1,27 @@
+# use default for developing locally
 default: &default
   adapter: postgresql
   encoding: utf8
   pool: 5
 
+# use c9 for developing online
+c9: &c9
+  adapter: postgresql
+  encoding: SQL_ASCII
+  pool: 5
+  username: ubuntu
+  password: ''
+  #host: <%= ENV['IP'] %>
+
 development:
-  <<: *default
+  <<: *c9
   database: reddit_clone_development
 
 test: &test
-  <<: *default
+  <<: *c9
   database: reddit_clone_test
 
-production:
-  <<: *default
-  database: reddit_clone_production
+#production:
+  #<<: *default
+  #database: reddit_clone_production
 

@@ -1,0 +1,4 @@
+#! /bin/bash
+# opens web app at this address:
+# http://workspacename-username.c9users.io/
+rails server -b $IP -p $PORT
