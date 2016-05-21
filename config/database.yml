@@ -11,17 +11,15 @@ c9: &c9
   pool: 5
   username: ubuntu
   password: ''
-  #host: <%= ENV['IP'] %>
 
 development:
-  <<: *c9
+  <<: *default
   database: reddit_clone_development
 
 test: &test
-  <<: *c9
+  <<: *default
   database: reddit_clone_test
 
-#production:
-  #<<: *default
-  #database: reddit_clone_production
-
+production:
+  <<: *default
+  database: reddit_clone_production

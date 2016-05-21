@@ -1,6 +1,6 @@
 class Footer extends React.Component {
   render () {
-    return <div />;
+    return <div>Footer</div>;
   }
 }
 

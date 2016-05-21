@@ -3,6 +3,7 @@
   <head>
     <title>RedditClone</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
@@ -11,7 +12,9 @@
     <!-- simple devise alerts for now -->
     <p class='notice'><%= notice %></p>
     <p class='alert'><%= alert %></p>
+    <%= react_component('Nav') %>
     <%= yield %>
+    <%= react_component('Footer') %>
 
   </body>
 </html>
