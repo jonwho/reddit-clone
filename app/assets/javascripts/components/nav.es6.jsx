@@ -10,9 +10,9 @@ class Nav extends React.Component {
             {/* Add spacer, to align navigation to the right. */}
             <div className="mdl-layout-spacer"></div>
             {/* Navigation. We hide it in small screens. */}
-            <nav className="mdl-navigation mdl-layout--large-screen-only">
-              <a className="mdl-navigation__link" href="">Link</a>
-              <a className="mdl-navigation__link" href="">Link</a>
+            <nav className="mdl-navigation mdl-layout">
+              <a className="mdl-navigation__link" href="">Login</a>
+              <a className="mdl-navigation__link" href={this.props.signUpUrl}>Sign up</a>
               <a className="mdl-navigation__link" href="">Link</a>
               <a className="mdl-navigation__link" href="">Link</a>
             </nav>

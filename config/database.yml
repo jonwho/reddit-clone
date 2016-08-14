@@ -13,13 +13,13 @@ c9: &c9
   password: ''
 
 development:
-  <<: *default
+  <<: *c9
   database: reddit_clone_development
 
 test: &test
-  <<: *default
+  <<: *c9
   database: reddit_clone_test
 
-production:
-  <<: *default
-  database: reddit_clone_production
+#production:
+  #<<: *default
+  #database: reddit_clone_production
