@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jonwho/reddit-clone.svg?branch=master)](https://travis-ci.org/jonwho/reddit-clone)
+
 Beep boop cloning reddit for funzies
 
 # LICENSE
