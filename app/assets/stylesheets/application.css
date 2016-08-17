@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require material-design-lite/material
+ *= require material-design-lite/src/material-design-lite
  *= require_tree .
  *= require_self
  */
