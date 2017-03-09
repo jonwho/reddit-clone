@@ -32,6 +32,7 @@ gem 'react-rails', '~> 1.6.0'
 
 group :development, :test do
   gem 'byebug'
+  gem 'powder'
   gem 'pry'
   gem 'pry-nav'
   gem 'pry-rails'

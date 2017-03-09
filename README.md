@@ -9,8 +9,17 @@ Beep boop cloning reddit for funzies
 
 Refer to [MIT License](https://github.com/jonwho/reddit-clone/blob/master/LICENSE.txt)
 
-# Local dev
-Using pow to serve so just hit the page reddit-clone.dev
+# Installation
+Within the root of this project directory.
+```shell
+bundle install
+powder link
+```
+
+# Development
+Rails app with Rack middleware. Using [pow](http://pow.cx/) to host local rack
+server. Use `powder` gem to easily link and serve.
+Visit at [http://reddit-clone.dev/](http://reddit-clone.dev/) if done right.
 
 # When developing on C9 online IDE
 `./bin/c9` to serve app
