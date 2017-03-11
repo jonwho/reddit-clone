@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+# :nodoc:
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -5,7 +7,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   before_create :set_default_role
-
 
   # if user is deleted should soft delete these for some time
   # hard delete maybe after 30 days?
