@@ -30,6 +30,8 @@ gem 'devise'
 gem 'pg'
 gem 'react-rails', '~> 1.6.0'
 
+gem 'webpacker', '~> 2.0'
+
 group :development, :test do
   gem 'byebug'
   gem 'powder'
