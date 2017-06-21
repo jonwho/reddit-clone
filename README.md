@@ -13,6 +13,7 @@ Refer to [MIT License](https://github.com/jonwho/reddit-clone/blob/master/LICENS
 Within the root of this project directory.
 ```shell
 bundle install
+curl get.pow.cx | sh
 powder link
 ```
 
