@@ -22,6 +22,11 @@ Rails app with Rack middleware. Using [pow](http://pow.cx/) to host local rack
 server. Use `powder` gem to easily link and serve.
 Visit at [http://reddit-clone.dev/](http://reddit-clone.dev/) if done right.
 
+## Pow tips
+Add `tmp/always_restart.txt` file to restart the application for each request.
+Useful when making many application changes. Add `tmp/restart.txt` to reload
+`.powrc` or `.powenv`; useful when you have specific configs in each file.
+
 # When developing on C9 online IDE
 `./bin/c9` to serve app
 
