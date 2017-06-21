@@ -21,3 +21,5 @@
 public/system/
 tags
 
+/public/packs
+/node_modules
