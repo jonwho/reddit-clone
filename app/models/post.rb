@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   validates :id_slug, uniqueness: true
+  # TODO: comment/uncomment this validation when testing
+  validates :user, presence: true
 
   scope :by_date, -> { order(created_at: :desc) }
 end

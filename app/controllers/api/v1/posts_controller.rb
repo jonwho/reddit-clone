@@ -1,4 +1,4 @@
-class Api::V1::PostsController < ApplicationController
+class Api::V1::PostsController < Api::V1::BaseController
   def index
     paginate json: Post.by_date, per_page: 20
   end
@@ -17,7 +17,6 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def destroy
-
   end
 
   private
