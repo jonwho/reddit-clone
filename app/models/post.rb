@@ -7,4 +7,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   validates :id_slug, uniqueness: true
+
+  scope :by_date, -> { order(created_at: :desc) }
 end
