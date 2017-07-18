@@ -8,7 +8,7 @@ class Api::V1::PostsController < ApplicationController
     if post.save
       render json: post
     else
-      render json: { error: 'Invalid params' }, status: :bad_request
+      render json: { error: 'Invalid parameters given' }, status: :bad_request
     end
   end
 
