@@ -28,12 +28,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'pg'
-gem 'react-rails', '~> 1.6.0'
 
+# TODO: make use of frontend framework
+# have a route serve a react/redux SPA
+gem 'react-rails', '~> 1.6.0'
 gem 'webpacker', '~> 2.0'
 
+# helps paginate data retrieved
 gem 'will_paginate'
 gem 'api-pagination'
+
+gem 'active_model_serializers'
 
 group :development, :test do
   gem 'byebug'

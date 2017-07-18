@@ -4,7 +4,12 @@ class Api::V1::PostsController < ApplicationController
   end
 
   def create
-
+    post = Post.create(post_params)
+    if post.save
+      render json: post
+    else
+      render json: { error: 'Invalid params' }, status: :bad_request
+    end
   end
 
   def update
