@@ -32,6 +32,9 @@ gem 'react-rails', '~> 1.6.0'
 
 gem 'webpacker', '~> 2.0'
 
+gem 'will_paginate'
+gem 'api-pagination'
+
 group :development, :test do
   gem 'byebug'
   gem 'powder'
