@@ -1,4 +1,6 @@
 class Api::V1::PostsController < Api::V1::BaseController
+  before_action :require_login, only: [:create, :update, :destroy]
+
   def index
     paginate json: Post.by_date, per_page: 20
   end

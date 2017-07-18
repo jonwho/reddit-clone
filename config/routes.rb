@@ -20,6 +20,10 @@ Rails.application.routes.draw do
         member do
         end
       end
+
+      # need to use devise route instead, this is just duplicate now
+      post 'login' => 'sessions#create'
+      delete 'logout' => 'sessions#destroy'
     end
   end
 end
