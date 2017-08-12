@@ -1,3 +1,4 @@
+TEST
 [![Build Status](https://travis-ci.org/jonwho/reddit-clone.svg?branch=master)](https://travis-ci.org/jonwho/reddit-clone)
 [![Code Climate](https://codeclimate.com/github/jonwho/reddit-clone/badges/gpa.svg)](https://codeclimate.com/github/jonwho/reddit-clone)
 [![Test Coverage](https://codeclimate.com/github/jonwho/reddit-clone/badges/coverage.svg)](https://codeclimate.com/github/jonwho/reddit-clone/coverage)
