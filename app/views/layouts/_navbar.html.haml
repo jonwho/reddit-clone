@@ -1,7 +1,0 @@
-%nav.mdl-navigation.mdl-layout
-  = link_to 'subreddit', '#', class: 'mdl-navigation__link'
-  = link_to 'subreddit', '#', class: 'mdl-navigation__link'
-  - if user_signed_in?
-    = link_to 'Login', new_user_session_path, class: 'mdl-navigation__link'
-  - else
-    = link_to 'Sign up', new_user_registration_path, class: 'mdl-navigation__link'
