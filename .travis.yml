@@ -14,7 +14,7 @@ before_install:
   - gem update bundler
 
 before_script:
-  - bundle install
+  - api/bin/bundle install
 
 script:
   - api/bin/rails db:drop db:create db:migrate --trace
