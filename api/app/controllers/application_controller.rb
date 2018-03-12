@@ -6,4 +6,8 @@ class ApplicationController < ActionController::API
       render nothing: true, status: :bad_request
     end
   end
+
+  def authorize_request
+    render status: :unauthorized unless AuthorizationService.authorize(headers)
+  end
 end
