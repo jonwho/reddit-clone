@@ -1,3 +1,4 @@
+---
 language: ruby
 cache: bundler
 
@@ -6,19 +7,12 @@ branches:
     - /^prod\//
     - /^stage\//
 
-rvm:
-  - 2.3.0
-
 addons:
-  postgresql: "9.4.8"
+  postgresql: "9.6.3"
 
 before_install:
   - gem update bundler
 
-before_script:
-  - psql -c 'drop database if exists reddit_clone_test;' -U postgres
-  - cp config/travis/database.yml config/database.yml
-
 script:
-  - bundle exec rake db:drop db:create db:migrate --trace
+  - api/bin/rails db:drop db:create db:migrate --trace
   - bundle exec rspec spec
