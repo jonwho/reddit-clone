@@ -13,6 +13,9 @@ addons:
 before_install:
   - gem update bundler
 
+before_script:
+  - bundle install
+
 script:
   - api/bin/rails db:drop db:create db:migrate --trace
   - api/bin/rspec
