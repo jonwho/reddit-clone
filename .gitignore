@@ -23,3 +23,5 @@ tags
 
 /public/packs
 /node_modules
+.env
+config/secrets.yml.key

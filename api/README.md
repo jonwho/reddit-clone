@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development
+Using rails secrets encryption to manage secrets. Run the following command:
 
-Things you may want to cover:
+`bin/rails secrets:edit`
 
-* Ruby version
+to add additional secrets. After editing the yml file it will be encrypted again.
 
-* System dependencies
+Read a secret using `Rails.application.secrets.<key_name>`.
 
-* Configuration
+Authentication is done through JWT. If secrets are lost then generate the PEM for
+JWT RSA algorithm with `OpenSSL::PKey::RSA.generate(2048)`.
 
-* Database creation
+See (https://github.com/jwt/ruby-jwt)[jwt docs] for more.
 
-* Database initialization
+## Testing
+TBD
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment
+TBD
