@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavContainer from './NavContainer';
+import HeaderContainer from './HeaderContainer';
 
 class RootContainer extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class RootContainer extends Component {
   render() {
     return (
       <div>
-        <NavContainer />
+        <HeaderContainer />
         <h1>Root Container</h1>
       </div>
     );
