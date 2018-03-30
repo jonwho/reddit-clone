@@ -1,0 +1,20 @@
+FROM node:9.10.0-alpine
+LABEL maintainer="Jon Ho jonwho.contact@gmail.com"
+
+# create workspace
+RUN mkdir /app
+WORKDIR /app
+
+# install and cache app dependencies
+COPY yarn.lock /app/yarn.lock
+COPY package.json /app/package.json
+RUN yarn
+
+# NOTE: this goes after packages have been installed
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY . /app
+
+EXPOSE 3001
+EXPOSE 35729

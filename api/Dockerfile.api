@@ -1,0 +1,22 @@
+FROM ruby:2.4-alpine
+LABEL maintainer="Jon Ho jonwho.contact@gmail.com"
+
+# get lib dependencies
+RUN apk update && apk add build-base nodejs postgresql-dev
+
+# create workspace
+RUN mkdir /app
+WORKDIR /app
+
+# copy Gemfile and Gemfile.lock to workspace
+COPY Gemfile Gemfile.lock ./
+
+# install bundler for ruby 2.4.4 and install gems and create binstubs
+RUN gem install bundler
+RUN bundle install --binstubs --jobs 20
+
+# move project source into container
+COPY . /app
+
+CMD rails db:create
+CMD rails db:migrate
