@@ -1,0 +1,8 @@
+.env
+.git
+.dockerignore
+
+./api/.byebug_history
+./api/log/*
+./api/tmp/*
+./api/.env
