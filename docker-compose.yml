@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile.api
     command: rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - ./api:/opt/api
+      - ./api:/app
     ports:
       - "3000:3000"
     env_file: ./api/.env
@@ -30,7 +30,8 @@ services:
       dockerfile: Dockerfile.frontend
     command: yarn start
     volumes:
-      - ./frontend:/opt/frontend
+      - ./frontend:/app
     ports:
       - "3001:3001"
+      - "35729:35729"
     env_file: ./frontend/.env

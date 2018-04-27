@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HeaderContainer from './HeaderContainer';
+import SignupContainer from './SignupContainer';
 
 class RootContainer extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class RootContainer extends Component {
       <div>
         <HeaderContainer />
         <h1>Root Container</h1>
+        <SignupContainer />
       </div>
     );
   }

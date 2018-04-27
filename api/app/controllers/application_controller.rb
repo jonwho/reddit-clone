@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::API
-  before_action :check_json_format
+  before_action :ensure_json_request
 
-  def check_json_format
+  def ensure_json_request
     if params[:format] != 'json' && request.headers['Accept'] =~ /json/
-      render nothing: true, status: :bad_request
+      render nothing: true, status: :not_found
     end
   end
 
