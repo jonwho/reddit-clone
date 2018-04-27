@@ -9,6 +9,12 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, allow_blank: true
   validate :email_format, if: -> { email.present? }
 
+  after_save :jwt_token
+
+  def jwt_token
+    @jwt_token ||= JwtService.encode(user_id: id)
+  end
+
   private
 
   def matching_passwords

@@ -4,11 +4,15 @@ module V1
       user = User.create(user_params)
 
       if user.save
-        render json: UserSerializer.new(user).serialized_json, status: :created
+        render(
+          json: UserSerializer.new(user).serialized_json,
+          status: :created
+        )
       else
-        render json: {
-          errors: [{ status: '422' }.merge(user.errors)]
-        }, status: :unprocessable_entity
+        render(
+          json: { errors: [{ status: '422' }.merge(user.errors)] },
+          status: :unprocessable_entity
+        )
       end
     end
 
