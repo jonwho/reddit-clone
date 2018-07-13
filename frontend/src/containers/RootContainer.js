@@ -3,10 +3,6 @@ import HeaderContainer from './HeaderContainer';
 import SignupContainer from './SignupContainer';
 
 class RootContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div>
