@@ -27,3 +27,4 @@ test_ingest_message.rb
 tags
 .agignore
 db/
+web/node_modules/

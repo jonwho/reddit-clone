@@ -5,7 +5,7 @@ services:
     build:
       context: ./api
       dockerfile: Dockerfile.api
-    command: rails s -p 3000 -b '0.0.0.0'
+    command: bash -c "bin/rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - ./api:/app
     ports:
@@ -24,14 +24,20 @@ services:
     image: redis:alpine
     ports:
       - "6380:6379"
-  frontend:
+  web:
+    image: frontend
     build:
-      context: ./frontend
-      dockerfile: Dockerfile.frontend
-    command: yarn start
+      context: ./web
+      dockerfile: Dockerfile.web
+    command: bash -c "yarn && yarn start"
     volumes:
-      - ./frontend:/app
+      - ./web:/app
     ports:
-      - "3112:3001"
-      - "35729:35729"
-    env_file: ./frontend/.env
+      - "3112:3001"    # web
+      - "35729:35729"  # file watcher
+    env_file: ./web/.env
+  storybook:
+    image: frontend
+    command: bash -c "yarn && yarn storybook"
+    ports:
+      - "3113:9001"
