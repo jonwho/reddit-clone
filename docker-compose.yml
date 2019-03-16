@@ -1,5 +1,5 @@
 ---
-version: '3.6'
+version: '3.7'
 services:
   api:
     build:
@@ -11,6 +11,7 @@ services:
     ports:
       - "3111:3000"
     env_file: ./api/.env
+    tty: true
     depends_on:
       - db
       - redis
@@ -33,8 +34,8 @@ services:
     volumes:
       - ./web:/app
     ports:
-      - "3112:3001"    # web
-      - "35729:35729"  # file watcher
+      - "3112:3001"   # web
+      - "35729:35729" # file watcher
     env_file: ./web/.env
   storybook:
     image: frontend
