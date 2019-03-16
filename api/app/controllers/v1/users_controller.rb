@@ -1,7 +1,7 @@
 module V1
   class UsersController < BaseController
     def create
-      user = User.create(user_params)
+      user = User.new(user_params)
 
       if user.save
         render(

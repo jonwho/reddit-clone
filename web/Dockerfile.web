@@ -1,9 +1,15 @@
-FROM node:9.10.0-alpine
+FROM node:9.11.2-alpine
 LABEL maintainer="Jon Ho jonwho.contact@gmail.com"
+
+# add bash
+RUN apk add --no-cache bash
 
 # create workspace
 RUN mkdir /app
 WORKDIR /app
+
+# install yarn globally
+RUN npm install -g yarn
 
 # install and cache app dependencies
 COPY yarn.lock /app/yarn.lock

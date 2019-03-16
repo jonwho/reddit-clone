@@ -1,6 +1,9 @@
 FROM ruby:2.4-alpine
 LABEL maintainer="Jon Ho jonwho.contact@gmail.com"
 
+# add bash
+RUN apk add --no-cache bash
+
 # get lib dependencies
 RUN apk update && apk add build-base nodejs postgresql-dev
 
@@ -11,9 +14,10 @@ WORKDIR /app
 # copy Gemfile and Gemfile.lock to workspace
 COPY Gemfile Gemfile.lock ./
 
-# install bundler for ruby 2.4.4 and install gems and create binstubs
+# 1. install bundler for ruby 2.4.4
+# 2. install gems from Gemfile
 RUN gem install bundler
-RUN bundle install --binstubs --jobs 20
+RUN bundle install
 
 # move project source into container
 COPY . /app

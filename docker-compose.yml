@@ -1,16 +1,17 @@
 ---
-version: '3.6'
+version: '3.7'
 services:
   api:
     build:
       context: ./api
       dockerfile: Dockerfile.api
-    command: rails s -p 3000 -b '0.0.0.0'
+    command: bash -c "bin/rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - ./api:/app
     ports:
-      - "3000:3000"
+      - "3111:3000"
     env_file: ./api/.env
+    tty: true
     depends_on:
       - db
       - redis
@@ -23,15 +24,21 @@ services:
   redis:
     image: redis:alpine
     ports:
-      - "6379:6379"
-  frontend:
+      - "6380:6379"
+  web:
+    image: frontend
     build:
-      context: ./frontend
-      dockerfile: Dockerfile.frontend
-    command: yarn start
+      context: ./web
+      dockerfile: Dockerfile.web
+    command: bash -c "yarn && yarn start"
     volumes:
-      - ./frontend:/app
+      - ./web:/app
     ports:
-      - "3001:3001"
-      - "35729:35729"
-    env_file: ./frontend/.env
+      - "3112:3001"   # web
+      - "35729:35729" # file watcher
+    env_file: ./web/.env
+  storybook:
+    image: frontend
+    command: bash -c "yarn && yarn storybook"
+    ports:
+      - "3113:9001"

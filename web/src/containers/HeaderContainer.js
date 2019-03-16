@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { GREY1 } from '../styles/colors';
-import NavLink from '../components/shared/NavLink';
 
 const styles = {
   header: {
@@ -35,7 +34,7 @@ class HeaderContainer extends Component {
         </div>
         <nav style={styles.pinRight}>
           <ul style={styles.linksContainer}>
-            <li><NavLink>Link 1</NavLink></li>
+            <li><a>Link 1</a></li>
             <li><a>Link 2</a></li>
             <li><a>Link 3</a></li>
           </ul>
